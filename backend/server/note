@@ -1,0 +1,5 @@
+npm install express cookie-parser bcrypt mongoose jsonwebtoken cors email-validator dotenv --save
+npm i nodemon --save
+npm i morgan --save
+npm install cloudinary
+npm i multer
