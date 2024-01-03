@@ -59,10 +59,10 @@ const register =async (req, res,next) => {
 
    await user.save();
 
-    user.password = undefined;
+        user.password = undefined;
         const token = await user.generateJWTToken();
         console.log(token)
-    // res.cookie('token', token, cookieOptions);
+        res.cookie('token', token, cookieOptions);
     
 
     res.status(201).json({
@@ -89,8 +89,8 @@ const login =async (req, res,next) => {
         }
         user.password = undefined;
         console.log(user)
-        // const token = await user.generateJWTToken();
-        // res.cookie('token', token, cookieOptions);
+        const token = await user.generateJWTToken();
+        res.cookie('token', token, cookieOptions);
     
         res.status(200).json({
             sucess: true,
